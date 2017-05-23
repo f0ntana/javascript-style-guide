@@ -8,6 +8,7 @@
 ## <a name='table-of-contents'>Índice</a>
 
   1. [Tipos](#types)
+  1. [Referências](#references)
   1. [Objetos](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
@@ -50,8 +51,8 @@
     + `undefined`
 
     ```javascript
-    var foo = 1;
-    var bar = foo;
+    const foo = 1;
+    let bar = foo;
 
     bar = 9;
 
@@ -64,8 +65,8 @@
     + `function`
 
     ```javascript
-    var foo = [1, 2];
-    var bar = foo;
+    const foo = [1, 2];
+    const bar = foo;
 
     bar[0] = 9;
 
@@ -73,6 +74,59 @@
     ```
 
 **[⬆ voltar ao topo](#table-of-contents)**
+
+
+## Referências
+
+  <a name="references--prefer-const"></a><a name="2.1"></a>
+
+   - [2.1](#references--prefer-const) Use `const` para todas as referências, evite usar `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+
+    > Por quê? Isso garante que você não possa reatribuir suas referências, o que pode levar a erros e dificil compreensão do código.
+
+    ```javascript
+    // bad
+    var a = 1;
+    var b = 2;
+
+    // good
+    const a = 1;
+    const b = 2;
+    ```
+
+  <a name="references--disallow-var"></a><a name="2.2"></a>
+  - [2.2](#references--disallow-var) Se você precisar reatribuir referências, use `let` ao invés de `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
+
+    > Por quê? `let` é um escopo de bloco ao invés de escopo de função como `var`.
+
+    ```javascript
+    // bad
+    var count = 1;
+    if (true) {
+      count += 1;
+    }
+
+    // good, use the let.
+    let count = 1;
+    if (true) {
+      count += 1;
+    }
+    ```
+
+  <a name="references--block-scope"></a><a name="2.3"></a>
+  - [2.3](#references--block-scope) Note que tanto `let` como `const` são blocos de espoco.
+
+    ```javascript
+    // const e let existem apenas nos blocos que são definidos em..
+    {
+      let a = 1;
+      const b = 1;
+    }
+    console.log(a); // ReferenceError
+    console.log(b); // ReferenceError
+    ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ## <a name='objects'>Objetos</a>
 
