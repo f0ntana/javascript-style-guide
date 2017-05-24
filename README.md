@@ -76,9 +76,8 @@
 **[⬆ voltar ao topo](#table-of-contents)**
 
 
-## Referências
+## <a name='references'>Referências</a>
 
-  <a name="references--prefer-const"></a><a name="2.1"></a>
    - [2.1](#references--prefer-const) Use `const` para todas as referências, evite usar `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
     > Por quê? Isso garante que você não possa reatribuir suas referências, o que pode levar a erros e difícil compreensão do código.
@@ -93,7 +92,6 @@
     const b = 2;
     ```
 
-  <a name="references--disallow-var"></a><a name="2.2"></a>
   - [2.2](#references--disallow-var) Se você precisar reatribuir referências, use `let` ao invés de `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
 
     > Por quê? `let` é um escopo de bloco ao invés de escopo de função como `var`.
@@ -112,7 +110,6 @@
     }
     ```
 
-  <a name="references--block-scope"></a><a name="2.3"></a>
   - [2.3](#references--block-scope) Note que tanto `let` como `const` são blocos de espoco.
 
     ```javascript
