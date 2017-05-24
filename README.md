@@ -78,7 +78,7 @@
 
 ## <a name='references'>Referências</a>
 
-   - [2.1](#references--prefer-const) Use `const` para todas as referências, evite usar `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) Use `const` para todas as referências, evite usar `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
     > Por quê? Isso garante que você não possa reatribuir suas referências, o que pode levar a erros e difícil compreensão do código.
 
